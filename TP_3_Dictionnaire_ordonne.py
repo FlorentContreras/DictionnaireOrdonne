@@ -12,6 +12,10 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
 
         self.dictionnaire = dictionnaire
 
+        """for 
+        self.cle
+        self.valeur """
+
 
     def __str__(self):
 

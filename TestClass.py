@@ -9,7 +9,6 @@ def testclass():
 	extdicfruit = {'pomme': 52, 'poire': 34}
 
 	fruit = DictionnaireOrdonne(extdicfruit)
-
 	print(fruit)
 
 testclass()
