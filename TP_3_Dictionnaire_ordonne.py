@@ -1,13 +1,23 @@
 # Implementation de la classe décrite dans le TP https://openclassrooms.com/fr/courses/235344-apprenez-a-programmer-en-python/233322-tp-un-dictionnaire-ordonne
 
 class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
-	""" class définissant un dictionnaire 
+    """ class définissant un dictionnaire 
 
-	"""	
+    """ 
+
+    def __init__(self, dictionnaire): # Notre méthode constructeur
+
+        """ Constructeur de notre class qui stocke le dictionnaire
+            Il devra ensuite stocker cela dans 2 listes   """
+
+        self.dictionnaire = dictionnaire
 
 
+    def __str__(self):
 
-
+        """ Cette méthode se charge d'afficher le dictionnaire """
+      
+        return str(self.dictionnaire)
 
 
 """
