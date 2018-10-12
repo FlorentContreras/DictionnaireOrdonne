@@ -76,4 +76,12 @@ On va demander si 'poire' est dans le dictionnaire fruit""")
 'poire' in fruit
 
 
+print("""
+On va trier le dictionnaire fruit""")
+
+fruit["prune"] = 128
+fruit["melon"] = 15
+
+fruit.sort()
+print(fruit)
 

@@ -95,6 +95,22 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
             print("Error __contains__. ")
 
 
+    def sort(self):
+        """ Cette méthode va trier le dictionnaire en fonction des clés """
+        
+        self._cle.sort()
+        DictTemp = dict(zip(self._cle, self._valeur))
+
+        listValeurTemp = []
+
+        for cle in self._cle:
+            listValeurTemp.append(DictTemp[cle])
+
+        self._valeur = listValeurTemp
+        return 0
+
+
+
 """
     On doit pouvoir afficher notre dictionnaire directement dans l'interpréteur 
     ou grâce à la fonction print. L'affichage doit être similaire à celui 
