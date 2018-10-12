@@ -21,9 +21,15 @@ print(fruit)
 
 
 print("""
-Affichage des clés d'un dictionnaire""")
+Affichage les clés d'un dictionnaire""")
 
 fruit.keys()
+
+
+print("""
+Affichage les valeurs d'un dictionnaire""")
+
+fruit.values()
 
 
 print("""
@@ -93,4 +99,6 @@ fruit["raisin"] = 1256
 
 fruit.reverse()
 print(fruit)
+
+
 

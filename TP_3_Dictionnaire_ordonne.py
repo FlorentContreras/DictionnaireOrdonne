@@ -38,6 +38,13 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         print(str(self._cle))
 
 
+    def values(self):
+        """ Cette méthode affiche les valeurs du dictionnaire, 
+        soit la liste comportant les valeurs """
+
+        print(str(self._valeur))
+
+
     def __getitem__(self, cleAAfficher):
         """Cette méthode spéciale est appelée quand on fait objet[index]
         Elle redirige vers self._dictionnaire[index]"""
@@ -128,14 +135,14 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         self._valeur = listValeurTemp
         return 0
 
+
+    #def keys(self):
+
+
 """
     On doit pouvoir afficher notre dictionnaire directement dans l'interpréteur 
     ou grâce à la fonction print. L'affichage doit être similaire à celui 
     des dictionnaires usuels ({cle1: valeur1, cle2: valeur2, …}).
-
-
-    L'objet doit définir les méthodes sort pour le trier et reverse pour l'inverser. 
-    Le tri de l'objet doit se faire en fonction des clés.
 
 
     L'objet doit pouvoir être parcouru. Quand on écrit for cle in dictionnaire, 
