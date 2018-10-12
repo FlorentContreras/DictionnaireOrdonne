@@ -92,14 +92,11 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
     def __contains__(self, cleAChercher):
         """ Cette méthode permet de savoir si une clé se trouve dans le dictionnaire """
 
-        if self._cle.count(cleAChercher) > 0:
+        if cleAChercher in self._cle:
             print(True)
 
-        elif self._cle.count(cleAChercher) == 0:
+        else:
             print(False)
-
-        else: 
-            print("Error __contains__. ")
 
 
     def sort(self):
