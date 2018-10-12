@@ -30,35 +30,34 @@ Affichage des clés d'un dictionnaire""")
 On va afficher la valeur liée à une clé (ici pomme)""")
 
 	fruit["pomme"]
-	fruit["biere"]
 
+
+	print("""
+On va tenter d'afficher la valeur liée à une clé inconnue (ici bière)""")
+	fruit["biere"]
 
 
 	print("""
 On va ajouter une valeur liée à une nouvelle clé (ici banane)""")
 
 	fruit["banane"] = 25
-	fruit.keys()
 	print(fruit)
 
 
 	print("""
-On va ajouter une valeur liée à une clé existante (ici pomme)""")
+On va modifier la valeur liée à une clé existante (ici pomme)""")
 
 	fruit["pomme"] = 13
-	fruit.keys()
+	print(fruit)
+
+
+	print("""
+On va supprimer la clé pomme""")
+
+	del fruit["pomme"]
 	print(fruit)
 
 
 
-	print("""
-On va supprimer une clé""")
-
-	del fruit["pomme"]
-	fruit.keys()
-
-
-	#fruit['banane'] = 25
-	#print(fruit)
 
 testclass()

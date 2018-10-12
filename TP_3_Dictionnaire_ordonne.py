@@ -66,9 +66,14 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         """ Cette méthode permet de supprimer un couple clé/valeur 
         à partir de sa clé """
 
-        indice = self._cle.index(cleASupprimer)
-        #del self._valeur.index(indice)
-        #del self._cle.index(indice)
+        try: 
+            indice = self._cle.index(cleASupprimer)
+
+            del self._valeur[indice]
+            del self._cle[indice]
+
+        except ValueError: 
+            print("L'indice {} a supprimer n'existe pas. ".format(cleASupprimer))
 
 
 """
