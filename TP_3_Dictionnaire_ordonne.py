@@ -31,8 +31,6 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         return str(DictionnairePrint)
 
 
-
-
     def keys(self):
         """ Cette méthode affiche les clés du dictionnaire, 
         soit la liste comportant les clés """
@@ -76,11 +74,25 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         except ValueError: 
             print("L'indice {} a supprimer n'existe pas. ".format(cleASupprimer))
 
+
     def __len__(self):
         """ Cette méthode permet de connaitre la taille de notre dictionnaire """
 
         print(len(self._cle))
         return 0
+
+
+    def __contains__(self, cleAChercher):
+        """ Cette méthode permet de savoir si une clé se trouve dans le dictionnaire """
+
+        if self._cle.count(cleAChercher) > 0:
+            print(True)
+
+        elif self._cle.count(cleAChercher) == 0:
+            print(False)
+            
+        else: 
+            print("Error __contains__. ")
 
 
 """

@@ -64,5 +64,16 @@ On va demander la taille du dictionnaire""")
 len(fruit)
 
 
+print("""
+On va demander si 'haricot' est dans le dictionnaire fruit""")
+
+'haricot' in fruit
+
+
+print("""
+On va demander si 'poire' est dans le dictionnaire fruit""")
+
+'poire' in fruit
+
 
 
