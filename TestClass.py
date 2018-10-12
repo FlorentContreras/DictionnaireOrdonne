@@ -13,96 +13,108 @@ print(dicvide)
 
 
 print("""
-Cas 2, dictionnaire comportant 2 fruits""")
+Cas 2, dictionnaire comportant 2 fruitss""")
 
-extdicfruit = {'pomme': 52, 'poire': 34}
-fruit = DictionnaireOrdonne(extdicfruit)
-print(fruit)
+extdicfruits = {'pomme': 52, 'poire': 34}
+fruits = DictionnaireOrdonne(extdicfruits)
+print(fruits)
 
 
 print("""
 Affichage les clés d'un dictionnaire""")
 
-fruit.keys()
+fruits.keys()
 
 
 print("""
 Affichage les valeurs d'un dictionnaire""")
 
-fruit.values()
+fruits.values()
 
 
 print("""
 On va afficher la valeur liée à une clé (ici pomme)""")
 
-fruit["pomme"]
+fruits["pomme"]
 
 
 print("""
 On va tenter d'afficher la valeur liée à une clé inconnue (ici bière)""")
-fruit["biere"]
+fruits["biere"]
 
 
 print("""
 On va ajouter une valeur liée à une nouvelle clé (ici banane)""")
 
-fruit["banane"] = 25
-print(fruit)
+fruits["banane"] = 25
+print(fruits)
 
 
 print("""
 On va modifier la valeur liée à une clé existante (ici pomme)""")
 
-fruit["pomme"] = 13
-print(fruit)
+fruits["pomme"] = 13
+print(fruits)
 
 
 print("""
 On va supprimer la clé pomme""")
 
-del fruit["pomme"]
-print(fruit)
+del fruits["pomme"]
+print(fruits)
 
 
 print("""
 On va demander la taille du dictionnaire""")
 
-len(fruit)
+len(fruits)
 
 
 print("""
-On va demander si 'haricot' est dans le dictionnaire fruit""")
+On va demander si 'haricot' est dans le dictionnaire fruits""")
 
-'haricot' in fruit
-
-
-print("""
-On va demander si 'poire' est dans le dictionnaire fruit""")
-
-'poire' in fruit
+'haricot' in fruits
 
 
 print("""
-On va trier le dictionnaire fruit""")
+On va demander si 'poire' est dans le dictionnaire fruits""")
 
-fruit["prune"] = 128
-fruit["melon"] = 15
-
-fruit.sort()
-print(fruit)
+'poire' in fruits
 
 
 print("""
-On va inverser le dictionnaire fruit""")
+On va trier le dictionnaire fruits""")
 
-fruit["raisin"] = 1256
+fruits["prune"] = 128
+fruits["melon"] = 15
 
-fruit.reverse()
-print(fruit)
+fruits.sort()
+print(fruits)
 
 
 print("""
-On va parcourir les clés du dictionnaire fruit""")
+On va inverser le dictionnaire fruits""")
 
-for cle in fruit:
+fruits["raisin"] = 1256
+
+fruits.reverse()
+print(fruits)
+
+
+print("""
+On va parcourir les clés du dictionnaire fruits""")
+
+for cle in fruits:
 	print(cle)
+
+
+
+print("""
+On va ajouter deux dictionnaires""")
+
+legumes = DictionnaireOrdonne({"carotte": 26, "haricot": 48})
+print("On va ajouter à fruit le dictionnaire legumes : " + str(legumes))
+
+fruits = fruits + legumes
+
+print(fruits)

@@ -36,6 +36,7 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         soit la liste comportant les clés """
 
         print(str(self._cle))
+        return list(self._cle)
 
 
     def values(self):
@@ -43,6 +44,7 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         soit la liste comportant les valeurs """
 
         print(str(self._valeur))
+        return list(self._valeur)
 
 
     def __getitem__(self, cleAAfficher):
@@ -138,24 +140,26 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         return iter(self._cle)
 
 
-
-"""
-    On doit pouvoir afficher notre dictionnaire directement dans l'interpréteur 
-    ou grâce à la fonction print. L'affichage doit être similaire à celui 
-    des dictionnaires usuels ({cle1: valeur1, cle2: valeur2, …}).
-
-
-    L'objet doit pouvoir être parcouru. Quand on écrit for cle in dictionnaire, 
-    on doit parcourir la liste des clés contenues dans le dictionnaire.
+    def items(self):
+        """Renvoie un générateur contenant les couples (cle, valeur)"""
+        for i, cle in enumerate(self._cle):
+            valeur = self._valeur[i]
+            yield (cle, valeur)
 
 
-    À l'instar des dictionnaires, trois méthodes keys() 
-    (renvoyant la liste des clés), values() (renvoyant la liste des valeurs) 
-    et items() (renvoyant les couples (clé, valeur)) doivent être mises en œuvre. 
-    Le type de retour de ces méthodes est laissé à votre initiative : 
-    il peut s'agir d'itérateurs ou de générateurs (tant qu'on peut les parcourir).
+    def __add__(self, dictAAjouter):
+        """ Méthode permettant d'ajouter 2 dictionnaires"""
+        
+        nouveau = DictionnaireOrdonne({})
 
+        # On commence par copier self dans le dictionnaire
+        for cle, valeur in self.items():
+            nouveau[cle] = valeur
+        
+        # On copie ensuite autre_objet
+        for cle, valeur in dictAAjouter.items():
+            nouveau[cle] = valeur
+        
+        return nouveau
 
-    On doit pouvoir ajouter deux dictionnaires ordonnés (dico1 + dico2) ; 
-    les clés et valeurs du second dictionnaire sont ajoutées au premier."""
 
