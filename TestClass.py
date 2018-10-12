@@ -85,3 +85,12 @@ fruit["melon"] = 15
 fruit.sort()
 print(fruit)
 
+
+print("""
+On va inverser le dictionnaire fruit""")
+
+fruit["raisin"] = 1256
+
+fruit.reverse()
+print(fruit)
+

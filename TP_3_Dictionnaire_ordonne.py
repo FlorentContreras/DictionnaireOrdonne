@@ -98,18 +98,35 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
     def sort(self):
         """ Cette méthode va trier le dictionnaire en fonction des clés """
         
-        self._cle.sort()
-        DictTemp = dict(zip(self._cle, self._valeur))
+        # on cré un dict temporaire pour garder la correspondance clé/valeur
+        DictTemp = dict(zip(self._cle, self._valeur)) 
 
+        self._cle.sort()    # tri
+        
         listValeurTemp = []
 
-        for cle in self._cle:
+        for cle in self._cle:       # remplissage des valeurs correspondante à la clé
             listValeurTemp.append(DictTemp[cle])
 
         self._valeur = listValeurTemp
         return 0
 
 
+    def reverse(self):
+        """ Cette méthode va inverser le dictionnaire """
+        
+        # on cré un dict temporaire pour garder la correspondance clé/valeur
+        DictTemp = dict(zip(self._cle, self._valeur))
+
+        self._cle = sorted(self._cle, reverse=True) # tri inverse
+
+        listValeurTemp = []
+
+        for cle in self._cle:       # remplissage des valeurs correspondante à la clé
+            listValeurTemp.append(DictTemp[cle])
+
+        self._valeur = listValeurTemp
+        return 0
 
 """
     On doit pouvoir afficher notre dictionnaire directement dans l'interpréteur 
