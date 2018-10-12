@@ -30,6 +30,7 @@ Affichage des clés d'un dictionnaire""")
 On va afficher la valeur liée à une clé (ici pomme)""")
 
 	fruit["pomme"]
+	fruit["biere"]
 
 
 

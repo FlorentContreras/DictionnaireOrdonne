@@ -42,8 +42,10 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
     def __getitem__(self, cleAAfficher):
         """Cette méthode spéciale est appelée quand on fait objet[index]
         Elle redirige vers self._dictionnaire[index]"""
-
-        print(self._valeur[self._cle.index(cleAAfficher)])
+        try:
+            print(self._valeur[self._cle.index(cleAAfficher)])
+        except ValueError: 
+            print("Indice {} inconnu du dictionnaire. ".format(cleAAfficher))
 
 
     def __setitem__(self, index, valeur):
