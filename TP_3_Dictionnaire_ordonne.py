@@ -32,6 +32,7 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
 
 
 
+
     def keys(self):
         """ Cette méthode affiche les clés du dictionnaire, 
         soit la liste comportant les clés """
@@ -75,40 +76,19 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         except ValueError: 
             print("L'indice {} a supprimer n'existe pas. ".format(cleASupprimer))
 
+    def __len__(self):
+        """ Cette méthode permet de connaitre la taille de notre dictionnaire """
+
+        print(len(self._cle))
+        return 0
+
 
 """
     On doit pouvoir créer le dictionnaire de plusieurs façons :
 
 
-        Pré-rempli grâce à des clés et valeurs passées en paramètre : 
-        comme les dictionnaires usuels, on doit ici avoir la possibilité 
-        de pré-remplir notre objet avec des couples clés-valeurs 
-        passés en paramètre (constructeur(cle1 = valeur1, cle2 = valeur2, …)).
-
-
-    Les clés et valeurs doivent être couplées. Autrement dit, 
-    si on cherche à supprimer une clé, la valeur correspondante 
-    doit également être supprimée. Les clés et valeurs se trouvant 
-    dans des listes de même taille, il suffira de prendre l'indice 
-    dans une liste pour savoir quel objet lui correspond dans l'autre. 
-    Par exemple, la clé d'indice 0 est couplée avec la valeur d'indice 0.
-
-
-    On doit pouvoir interagir avec notre objet conteneur grâce aux crochets, 
-    pour récupérer une valeur (objet[cle]), pour la modifier (objet[cle] = valeur) 
-    ou pour la supprimer (del objet[cle]).
-
-
-    Quand on cherche à modifier une valeur, si la clé existe 
-    on écrase l'ancienne valeur, si elle n'existe pas on ajoute le couple clé-valeur 
-    à la fin du dictionnaire.
-
-
     On doit pouvoir savoir grâce au mot-clé in si une clé se trouve 
     dans notre dictionnaire (cle in dictionnaire).
-
-
-    On doit pouvoir demander la taille du dictionnaire grâce à la fonction len.
 
 
     On doit pouvoir afficher notre dictionnaire directement dans l'interpréteur 
