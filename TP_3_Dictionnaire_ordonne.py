@@ -58,14 +58,14 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         """Cette méthode est appelée quand on écrit objet[index] = valeur
         On redirige vers self._dictionnaire[index] = valeur"""
         
-        if self._cle.count(index) == 0:
+        if index in self._cle:
+            print("Mise à jour de l'indice {} avec la valeur {}. ".format(index, valeur))
+            self._valeur[self._cle.index(index)] = valeur
+            
+        else:
             print("Création de l'indice {} avec la valeur {}. ".format(index, valeur))
             self._cle.append(index)
             self._valeur.append(valeur)
-
-        else: 
-            print("Mise à jour de l'indice {} avec la valeur {}. ".format(index, valeur))
-            self._valeur[self._cle.index(index)] = valeur
 
 
     def __delitem__(self, cleASupprimer):
