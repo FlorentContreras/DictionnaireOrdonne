@@ -2,26 +2,34 @@
 
 class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
     """ class définissant un dictionnaire 
+        comprend 2 listes : 
+        - cle
+        - valeur 
 
     """ 
 
-    def __init__(self, dictionnaire): # Notre méthode constructeur
-
-        """ Constructeur de notre class qui stocke le dictionnaire
+    def __init__(self, DictionnaireEntrant): # Notre méthode constructeur
+        """ Constructeur de notre class qui stocke le DictionnaireEntrant
             Il devra ensuite stocker cela dans 2 listes   """
 
-        self.dictionnaire = dictionnaire
+        # création de listes vides pour accueillir les clés et valeurs du dictionnaire
+        self.cle = []
+        self.valeur = []
 
-        """for 
-        self.cle
-        self.valeur """
-
+        # Remplissage des listes à partir des données du dictionnaire
+        for cle_temp, valeur_temp in DictionnaireEntrant.items(): 
+            self.cle.append(cle_temp)
+            self.valeur.append(valeur_temp)
+            
 
     def __str__(self):
-
-        """ Cette méthode se charge d'afficher le dictionnaire """
+        """ Cette méthode se charge d'afficher un DictionnairePrint 
+        reconstruit à partir des 2 listes"""
       
-        return str(self.dictionnaire)
+        DictionnairePrint = dict(zip(self.cle, self.valeur))
+
+        return str(DictionnairePrint)
+
 
 
 """
