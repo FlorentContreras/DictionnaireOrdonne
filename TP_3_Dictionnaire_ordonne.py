@@ -3,8 +3,8 @@
 class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
     """ class définissant un dictionnaire 
         comprend 2 listes : 
-        - cle
-        - valeur 
+        - _cle
+        - _valeur 
 
     """ 
 
@@ -13,20 +13,20 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
             Il devra ensuite stocker cela dans 2 listes   """
 
         # création de listes vides pour accueillir les clés et valeurs du dictionnaire
-        self.cle = []
-        self.valeur = []
+        self._cle = []
+        self._valeur = []
 
         # Remplissage des listes à partir des données du dictionnaire
         for cle_temp, valeur_temp in DictionnaireEntrant.items(): 
-            self.cle.append(cle_temp)
-            self.valeur.append(valeur_temp)
+            self._cle.append(cle_temp)
+            self._valeur.append(valeur_temp)
             
 
     def __str__(self):
         """ Cette méthode se charge d'afficher un DictionnairePrint 
         reconstruit à partir des 2 listes"""
       
-        DictionnairePrint = dict(zip(self.cle, self.valeur))
+        DictionnairePrint = dict(zip(self._cle, self._valeur))
 
         return str(DictionnairePrint)
 
@@ -36,31 +36,37 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         """ Cette méthode affiche les clés du dictionnaire, 
         soit la liste comportant les clés """
 
-        print(str(self.cle))
+        print(str(self._cle))
 
 
     def __getitem__(self, cleAAfficher):
         """Cette méthode spéciale est appelée quand on fait objet[index]
         Elle redirige vers self._dictionnaire[index]"""
 
-        print(self.valeur[self.cle.index(cleAAfficher)])
+        print(self._valeur[self._cle.index(cleAAfficher)])
 
 
     def __setitem__(self, index, valeur):
         """Cette méthode est appelée quand on écrit objet[index] = valeur
         On redirige vers self._dictionnaire[index] = valeur"""
-
         
+        if self._cle.count(index) == 0:
+            print("Création de l'indice {} avec la valeur {}. ".format(index, valeur))
+            self._cle.append(index)
+            self._valeur.append(valeur)
 
-        #self._dictionnaire[index] = valeur
+        else: 
+            print("Mise à jour de l'indice {} avec la valeur {}. ".format(index, valeur))
+            self._valeur[self._cle.index(index)] = valeur
+
 
     def __delitem__(self, cleASupprimer):
         """ Cette méthode permet de supprimer un couple clé/valeur 
         à partir de sa clé """
 
-        indice = self.cle.index(cleASupprimer)
-        #del self.valeur.index(indice)
-        #del self.cle.index(indice)
+        indice = self._cle.index(cleASupprimer)
+        #del self._valeur.index(indice)
+        #del self._cle.index(indice)
 
 
 """

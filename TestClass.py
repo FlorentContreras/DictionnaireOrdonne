@@ -27,9 +27,27 @@ Affichage des clés d'un dictionnaire""")
 
 
 	print("""
-On va afficher la valeur liée à une clé""")
+On va afficher la valeur liée à une clé (ici pomme)""")
 
 	fruit["pomme"]
+
+
+
+	print("""
+On va ajouter une valeur liée à une nouvelle clé (ici banane)""")
+
+	fruit["banane"] = 25
+	fruit.keys()
+	print(fruit)
+
+
+	print("""
+On va ajouter une valeur liée à une clé existante (ici pomme)""")
+
+	fruit["pomme"] = 13
+	fruit.keys()
+	print(fruit)
+
 
 
 	print("""
