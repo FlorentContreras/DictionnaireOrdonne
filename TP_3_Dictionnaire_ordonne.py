@@ -32,16 +32,19 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
 
 
 
+    def keys(self):
+        """ Cette méthode affiche les clés du dictionnaire, 
+        soit la liste comportant les clés """
+
+        print(str(self.cle))
+
+
+
 """
 On doit pouvoir créer le dictionnaire de plusieurs façons :
 
-    Vide : on appelle le constructeur sans lui passer aucun paramètre et 
-    le dictionnaire créé est donc vide.
 
-    Copié depuis un dictionnaire : on passe en paramètre du constructeur 
-    un dictionnaire que l'on copie par la suite dans notre objet. 
-    On peut ainsi écrire constructeur(dictionnaire) et les clés et 
-    valeurs contenues dans le dictionnaire sont copiées dans l'objet construit.
+
 
     Pré-rempli grâce à des clés et valeurs passées en paramètre : 
     comme les dictionnaires usuels, on doit ici avoir la possibilité de pré-remplir 
