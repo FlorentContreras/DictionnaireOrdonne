@@ -61,7 +61,7 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         if index in self._cle:
             print("Mise à jour de l'indice {} avec la valeur {}. ".format(index, valeur))
             self._valeur[self._cle.index(index)] = valeur
-            
+
         else:
             print("Création de l'indice {} avec la valeur {}. ".format(index, valeur))
             self._cle.append(index)
@@ -133,6 +133,9 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
         return 0
 
 
+    def __iter__(self):
+        """Méthode de parcours de l'objet. On renvoie l'itérateur des clés"""
+        return iter(self._cle)
 
 
 

@@ -101,3 +101,8 @@ fruit.reverse()
 print(fruit)
 
 
+print("""
+On va parcourir les clés du dictionnaire fruit""")
+
+for cle in fruit:
+	print(cle)
