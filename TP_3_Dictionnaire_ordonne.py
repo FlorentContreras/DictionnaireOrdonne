@@ -90,19 +90,12 @@ class DictionnaireOrdonne: # Définition de la class DictionnaireOrdonnee
 
         elif self._cle.count(cleAChercher) == 0:
             print(False)
-            
+
         else: 
             print("Error __contains__. ")
 
 
 """
-    On doit pouvoir créer le dictionnaire de plusieurs façons :
-
-
-    On doit pouvoir savoir grâce au mot-clé in si une clé se trouve 
-    dans notre dictionnaire (cle in dictionnaire).
-
-
     On doit pouvoir afficher notre dictionnaire directement dans l'interpréteur 
     ou grâce à la fonction print. L'affichage doit être similaire à celui 
     des dictionnaires usuels ({cle1: valeur1, cle2: valeur2, …}).
